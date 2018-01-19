@@ -43,5 +43,31 @@ public class Main2Activity extends AppCompatActivity {
 
             }
         });
+
+        Button button3 = (Button) findViewById(R.id.button3);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(com.zpj.myapplication2.Main2Activity.this, "返回到上一个活动",
+                        Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent();
+                intent.putExtra("data_return", "Hello MainActivity");
+                setResult(RESULT_OK, intent);
+                finish();
+
+            }
+        });
+
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+        Intent intent= new Intent();
+        intent.putExtra("data_return", "Hello aaaaaaaaaaa");
+        setResult(RESULT_OK, intent);
+        finish();
     }
 }
