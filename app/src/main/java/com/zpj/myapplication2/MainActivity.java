@@ -31,12 +31,13 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(com.zpj.myapplication2.MainActivity.this, "10086",
+                Toast.makeText(com.zpj.myapplication2.MainActivity.this, "传值",
                         Toast.LENGTH_SHORT).show();
 
-                Intent intent1 = new Intent(Intent.ACTION_DIAL);
-                intent1.setData(Uri.parse("tel:10086"));
-                startActivity(intent1);
+                String data = "Hello wwww";
+                Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                intent.putExtra("extra_data", data);
+                startActivity(intent);
             }
         });
     }
